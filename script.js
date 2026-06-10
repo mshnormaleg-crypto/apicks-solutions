@@ -30,4 +30,19 @@
       slides[idx].classList.add('active');
     }, 4500);
   }
+
+  // Scroll reveal effects for content
+  const revealElements = document.querySelectorAll('section, .service-card, .photo-card, .testimonial-card, .stat-card, .pricing-card, .contact-card, footer, header');
+  revealElements.forEach((el) => el.classList.add('animate-on-scroll'));
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  revealElements.forEach((el) => revealObserver.observe(el));
 });

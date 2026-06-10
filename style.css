@@ -1,8 +1,12 @@
+html {
+  scroll-behavior: smooth;
+}
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   background: #ffffff;
   color: #12331f;
+  transition: background-color 0.35s ease, color 0.35s ease;
 }
 header {
   display: flex;
@@ -67,12 +71,15 @@ header {
   border-radius: 8px;
   background: rgba(255,255,255,0.9);
 }
-.button, .button-secondary {
+.button, .button-secondary, .read-more, .social-links a, .service-card, .photo-card, .testimonial-card, .stat-card, .pricing-card, .contact-card, .hero-image {
   border: none;
   cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+.button, .button-secondary {
   border-radius: 999px;
   font-weight: 700;
-  transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.2s ease;
+  transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.2s ease, color 0.2s ease;
 }
 .button {
   background: #137f3f;
@@ -258,6 +265,10 @@ main {
   border-radius: 28px;
   overflow: hidden;
   box-shadow: 0 28px 80px rgba(0,0,0,0.25);
+  transform: translateZ(0);
+}
+.hero-image:hover {
+  transform: translateY(-4px);
 }
 .hero-slide {
   position: absolute;
@@ -411,6 +422,16 @@ section {
   box-shadow: 0 28px 60px rgba(4, 20, 40, 0.22);
   background: #f5f9ff;
 }
+.services-section .service-card:hover .service-icon {
+  transform: translateX(-50%) translateY(10px);
+  background: #e8f2ff;
+}
+.services-section .service-card:hover h3 {
+  color: #0b2f35;
+}
+.services-section .service-card:hover p {
+  color: #434f57;
+}
 .services-section .service-icon {
   width: 84px;
   height: 84px;
@@ -443,6 +464,7 @@ section {
   align-items: center;
   justify-content: center;
   position: relative;
+  transition: transform 0.25s ease, color 0.25s ease;
 }
 .services-section .read-more::after {
   content: '';
@@ -456,14 +478,30 @@ section {
   transform-origin: left center;
   transition: transform 0.25s ease;
 }
+.services-section .read-more:hover {
+  color: #0b2f35;
+  transform: translateX(2px);
+}
 .services-section .read-more:hover::after {
   transform: scaleX(1);
+}
+.services-section .service-card:hover .read-more {
+  color: #0b2f35;
 }
 .services-section .read-more .arrow { font-size: 1.15rem; }
 
 @media (max-width: 900px) {
   .services-grid { grid-template-columns: 1fr; }
   .service-card { min-height: auto; }
+}
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 .service-card {
   padding: 26px;
