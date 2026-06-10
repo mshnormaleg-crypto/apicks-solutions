@@ -21,7 +21,7 @@ python -m http.server 8000
 
 Form setup:
 - The contact page is configured to use Formspree.
-- Replace `YOUR_FORM_ID` in both `contact-us.html` and `test.html` with your own Formspree form ID.
+- Replace `YOUR_FORM_ID` in both `contact-us.html` and `index.html` with your own Formspree form ID.
 - When a visitor sends a message, Formspree will email you the submission.
 
 Messages panel:

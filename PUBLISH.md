@@ -1,7 +1,7 @@
 # Publish Your Site
 
 ## Option 1: GitHub Pages
-1. Rename `test.html` to `index.html` if not already renamed.
+1. Confirm your homepage file is `index.html`.
 2. Create a GitHub repository for your site.
 3. Run these commands in PowerShell from your Desktop folder:
 
