@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dashboard — A-Picks Solutions (Prototype)</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>A-Picks Dashboard</h1>
+      <div class="meta"><button id="logoutBtn">Logout</button></div>
+    </header>
+
+    <main id="app" class="hidden">
+      <section class="stats">
+        <div class="stat"><strong id="leadsTotal">—</strong><span>Leads (7d)</span></div>
+        <div class="stat"><strong id="callsTotal">—</strong><span>Calls (7d)</span></div>
+        <div class="stat"><strong id="apptsTotal">—</strong><span>Appointments</span></div>
+        <div class="stat"><strong id="revenueTotal">—</strong><span>Revenue</span></div>
+      </section>
+
+      <section class="charts">
+        <div class="card"><canvas id="leadsChart"></canvas></div>
+        <div class="card"><canvas id="callsChart"></canvas></div>
+      </section>
+
+      <section class="card" id="messagesPanel"></section>
+      <section class="table card" id="dataTable"></section>
+    </main>
+
+    <div id="login" class="login">
+      <div class="login-card">
+        <h2>Sign in</h2>
+        <p>This prototype uses a simple password gate (password: <strong>admin</strong>).</p>
+        <input id="pwd" type="password" placeholder="Password" />
+        <button id="loginBtn">Enter</button>
+        <div id="loginErr" class="error"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
