@@ -1,4 +1,6 @@
 ﻿document.addEventListener('DOMContentLoaded', function () {
+
+  // Hero buttons click tracking
   const heroButtons = document.querySelectorAll('.hero-buttons a');
   heroButtons.forEach((button) => {
     button.addEventListener('click', function () {
@@ -6,8 +8,6 @@
       console.log(`${label} clicked`);
     });
   });
-
-  // Remove old contact alert behavior now that forms submit through Formspree
 
   // Mobile nav toggle
   const navToggle = document.querySelector('.nav-toggle');
@@ -31,8 +31,10 @@
     }, 4500);
   }
 
-  // Scroll reveal effects for content
-  const revealElements = document.querySelectorAll('section, .service-card, .photo-card, .testimonial-card, .stat-card, .pricing-card, .contact-card, footer, header');
+  // Scroll reveal — EXCLUDE hero and header so they are always visible
+  const revealElements = document.querySelectorAll(
+    '.service-card, .photo-card, .testimonial-card, .stat-card, .pricing-card, .contact-card, .why-card, .process-step, .trust-badge, .faq-item, footer'
+  );
   revealElements.forEach((el) => el.classList.add('animate-on-scroll'));
 
   const revealObserver = new IntersectionObserver((entries) => {
@@ -42,9 +44,14 @@
         revealObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.15 });
+  }, { threshold: 0.1 });
 
   revealElements.forEach((el) => revealObserver.observe(el));
+
+  // Also observe elements already marked animate-on-scroll in HTML
+  document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+    revealObserver.observe(el);
+  });
 
   // Counter Animation for Stats
   const counterObserver = new IntersectionObserver((entries) => {
@@ -52,13 +59,13 @@
       if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
         const counter = entry.target.querySelector('.counter');
         const target = parseInt(entry.target.getAttribute('data-target'), 10);
-        
+
         if (counter && target) {
           let current = 0;
-          const increment = Math.ceil(target / 100); // Adjust speed
-          const duration = 2000; // 2 seconds
-          const stepTime = duration / (target / increment);
-          
+          const increment = Math.ceil(target / 100);
+          const duration = 2000;
+          const stepTime = Math.max(duration / (target / increment), 10);
+
           const timer = setInterval(() => {
             current += increment;
             if (current >= target) {
@@ -66,18 +73,20 @@
               clearInterval(timer);
               entry.target.classList.add('counted');
             }
-            // Format number with commas
-            counter.textContent = current.toLocaleString();
+            // Format large numbers nicely
+            if (target >= 1000000) {
+              counter.textContent = '$' + (current / 1000000).toFixed(1) + 'M+';
+            } else {
+              counter.textContent = current.toLocaleString() + '+';
+            }
           }, stepTime);
         }
-        
+
         counterObserver.unobserve(entry.target);
       }
     });
   }, { threshold: 0.15 });
 
-  // Apply counter animation to stat cards
   const statCards = document.querySelectorAll('.stat-card[data-target]');
   statCards.forEach((card) => counterObserver.observe(card));
 });
-
