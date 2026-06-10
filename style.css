@@ -396,19 +396,20 @@ section {
   background: #ffffff;
   color: #052b4a;
   border-radius: 14px;
-  padding: 48px 26px 26px;
+  padding: 56px 26px 26px;
   box-shadow: 0 18px 40px rgba(4, 20, 40, 0.2);
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  min-height: 320px;
+  gap: 16px;
+  min-height: 330px;
   position: relative;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 .services-section .service-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 28px 60px rgba(4, 20, 40, 0.22);
+  background: #f5f9ff;
 }
 .services-section .service-icon {
   width: 84px;
@@ -416,17 +417,19 @@ section {
   position: absolute;
   top: -42px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(0);
   border-radius: 50%;
   background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 18px 30px rgba(3, 30, 60, 0.18);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  z-index: 1;
 }
 .services-section .service-card:hover .service-icon {
-  transform: translate(-50%, 10px);
+  transform: translateX(-50%) translateY(10px);
+  background: #e6f0ff;
 }
 .services-section .service-icon svg { width:42px; height:42px; fill:#0f3f1f; }
 .services-section .service-card h3 { margin: 0; font-size: 1.15rem; color: #052b4a; text-align: center; }
