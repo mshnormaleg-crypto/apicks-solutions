@@ -3,78 +3,115 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact A-Picks Solutions | Book a Meeting or WhatsApp</title>
-  <meta name="description" content="Contact A-Picks Solutions for real estate calling, appointment setting, and acquisition support. Book a meeting or send a message today." />
+  <title>Contact Us | A-Picks Solutions</title>
+  <meta name="description" content="Get in touch with A-Picks Solutions for real estate cold calling, appointment setting, and acquisition support." />
   <meta name="robots" content="index, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <div class="logo"><img src="40032cae-659b-45c8-bc1c-b05bab68e783.jpg" alt="A-Picks Solutions logo" class="brand-logo" /><span class="logo-text">A-Picks Solutions</span></div>
-    
-    <div class="header-actions">
-      <a class="button-secondary" href="tel:+16145052580">Call Us</a>
-      <a class="button-secondary" href="index.html">Home</a>
+
+  <header id="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <img src="40032cae-659b-45c8-bc1c-b05bab68e783.jpg" alt="A-Picks Solutions logo" class="brand-logo" />
+        <span class="logo-text">A-Picks Solutions</span>
+      </div>
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html">Home</a>
+        <a href="about-us.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="fqa.html">FAQ</a>
+        <a href="contact-us.html">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <a href="https://wa.me/16147144733" target="_blank" class="wa-link">WhatsApp</a>
+        <a class="btn-primary" href="contact-us.html">Book a Meeting</a>
+      </div>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
     </div>
   </header>
-  <main>
-    <section class="page-hero">
-      <h1>Get in touch with us</h1>
-      <p>Reach out today, book a meeting, or send a message so our team can help you grow lead volume and close more deals.</p>
-      <div class="page-hero-buttons">
-        <a class="button" href="https://wa.me/16147144733" target="_blank">WhatsApp Us</a>
-        <a class="button-secondary" href="https://calendly.com/thedialforce/30min?month=2024-02" target="_blank">Book a Meeting</a>
-      </div>
-    </section>
 
-    <section class="page-section">
-      <div class="contact-grid">
-        <div class="contact-card">
-          <h3>Send us a message</h3>
+  <section class="page-hero-section">
+    <div class="container">
+      <p class="section-eyebrow">Get In Touch</p>
+      <h1>Let's Start a Conversation</h1>
+      <p>Tell us about your business and goals — we'll get back to you within 24 hours.</p>
+    </div>
+  </section>
+
+  <section class="what-section">
+    <div class="container">
+      <div class="about-grid">
+
+        <div class="contact-card animate-on-scroll">
+          <h3>Send Us a Message</h3>
           <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
             <input type="hidden" name="_subject" value="New Message from A-Picks Solutions" />
-            <div class="grid-two">
+            <div class="form-row">
               <input name="name" type="text" placeholder="Name *" required />
-              <input name="phone" type="tel" placeholder="Phone Number *" required />
+              <input name="phone" type="tel" placeholder="Phone number *" required />
             </div>
-            <input name="email" type="email" placeholder="Email Address *" required />
-            <textarea name="message" placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
+            <input name="email" type="email" placeholder="Email *" required />
+            <textarea name="message" placeholder="Your message" required></textarea>
+            <button type="submit" class="btn-primary">Send Message</button>
           </form>
         </div>
-        <div class="contact-card">
-          <h3>Contact information</h3>
-          <p><strong>Phone:</strong> (614) 505-2580</p>
-          <p><strong>WhatsApp:</strong> +1 (614) 714-4733</p>
-          <p><strong>Email:</strong> a.pickssolutions@gmail.com</p>
-          <p><strong>Address:</strong> Albuquerque, NM</p>
-          <div class="page-hero-buttons" style="margin-top: 20px;">
-            <a class="button" href="tel:+16145052580">Call Now</a>
-            <a class="button-secondary" href="mailto:a.pickssolutions@gmail.com">Email Us</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
 
-  <footer>
-    <div class="footer-grid">
-      <div>
-        <h4>About</h4>
-        <p>A-Picks Solutions — where unbeatable telemarketing meets business success. Choose us for excellence in every call.</p>
-      </div>
-      <div>
-        <h4>Useful links</h4>
-        <p><a href="index.html">Home</a><br /><a href="about-us.html">About Us</a><br /><a href="services.html">Services</a><br /><a href="pricing.html">Pricing</a><br /><a href="contact-us.html">Contact Us</a><br /><a href="fqa.html">FQA</a></p>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <p>Tel: (614) 505-2580<br />WhatsApp: +1 (614) 714-4733<br />Email: a.pickssolutions@gmail.com</p>
+        <div class="contact-card animate-on-scroll">
+          <h3>Contact Information</h3>
+          <ul class="mission-list">
+            <li>Phone: (614) 505-2580</li>
+            <li>WhatsApp: +1 (614) 714-4733</li>
+            <li>Email: a.pickssolutions@gmail.com</li>
+            <li>Address: Albuquerque, NM</li>
+            <li>Hours: Mon&ndash;Fri, 9am&ndash;6pm EST</li>
+          </ul>
+          <a href="https://wa.me/16147144733" target="_blank" class="btn-primary" style="margin-top:20px;display:inline-block;">Chat on WhatsApp</a>
+        </div>
+
       </div>
     </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="40032cae-659b-45c8-bc1c-b05bab68e783.jpg" alt="A-Picks Solutions" class="footer-logo" />
+        <p>A-Picks Solutions &#8212; where unbeatable telemarketing meets business success.</p>
+        <a href="https://wa.me/16147144733" target="_blank" class="wa-link">WhatsApp Us</a>
+      </div>
+      <div class="footer-links">
+        <h4>Useful Links</h4>
+        <a href="index.html">Home</a>
+        <a href="about-us.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="contact-us.html">Contact Us</a>
+        <a href="fqa.html">FAQ</a>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>Tel: (614) 505-2580</p>
+        <p>WhatsApp: +1 (614) 714-4733</p>
+        <p>Email: a.pickssolutions@gmail.com</p>
+        <p>Address: Albuquerque, NM</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&#169; 2026 A-Picks Solutions. All Rights Reserved.</p>
+    </div>
   </footer>
+
   <a class="whatsapp-float" href="https://wa.me/16147144733" target="_blank" aria-label="Chat on WhatsApp">
     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.672.149-.198.297-.768.966-.94 1.164-.173.198-.347.223-.644.075-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.297.298-.495.099-.198.05-.372-.025-.521-.075-.149-.672-1.612-.92-2.207-.242-.579-.487-.5-.672-.51l-.573-.01c-.198 0-.52.074-.792.372-.273.297-1.042 1.017-1.042 2.479 0 1.462 1.066 2.875 1.213 3.074.149.198 2.1 3.2 5.076 4.487.709.306 1.262.489 1.693.626.712.226 1.36.194 1.872.118.571-.084 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.414-.074-.124-.272-.198-.57-.347z"/></svg>
   </a>
+
+  <script src="script.js"></script>
 </body>
 </html>
