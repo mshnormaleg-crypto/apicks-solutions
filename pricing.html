@@ -10,6 +10,115 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .promo-banner {
+      background: linear-gradient(135deg, #ff6b00 0%, #ff9a00 100%);
+      padding: 0;
+      overflow: hidden;
+    }
+    .promo-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 40px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .promo-badge {
+      background: rgba(255,255,255,0.2);
+      border: 2px solid rgba(255,255,255,0.5);
+      border-radius: 12px;
+      padding: 10px 20px;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      flex-shrink: 0;
+      white-space: nowrap;
+    }
+    .promo-text h3 {
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 900;
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+    .promo-text p {
+      color: rgba(255,255,255,0.92);
+      font-size: 1rem;
+      margin: 0;
+    }
+    .promo-pricing {
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .promo-pricing .old-price {
+      color: rgba(255,255,255,0.6);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-decoration: line-through;
+      display: block;
+    }
+    .promo-pricing .new-price {
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 900;
+      line-height: 1;
+      display: block;
+    }
+    .promo-pricing .price-label {
+      color: rgba(255,255,255,0.85);
+      font-size: 0.85rem;
+      display: block;
+      margin-top: 4px;
+    }
+    .promo-cta {
+      display: inline-block;
+      background: #fff;
+      color: #ff6b00;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      padding: 14px 32px;
+      border-radius: 999px;
+      font-size: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .promo-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+      color: #ff6b00;
+    }
+    .promo-timer {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.9);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+    .promo-timer span {
+      background: rgba(255,255,255,0.2);
+      border-radius: 6px;
+      padding: 3px 8px;
+      color: #fff;
+      font-weight: 700;
+    }
+    @media (max-width: 768px) {
+      .promo-inner { flex-direction: column; text-align: center; }
+      .promo-timer { justify-content: center; }
+    }
+  </style>
 </head>
 <body>
 
@@ -37,6 +146,26 @@
     </div>
   </header>
 
+  <!-- PROMO BANNER -->
+  <section class="promo-banner">
+    <div class="promo-inner">
+      <div class="promo-badge">Limited Time Offer</div>
+      <div class="promo-text">
+        <h3>First 3 Months Special — Package 1</h3>
+        <p>Lock in a discounted rate for your first 3 months. Save $300/caller every month.</p>
+        <div class="promo-timer">
+          Offer applies to new clients only &nbsp;•&nbsp; While spots last
+        </div>
+      </div>
+      <div class="promo-pricing">
+        <span class="old-price">$1,300/mo</span>
+        <span class="new-price">$1,000</span>
+        <span class="price-label">per caller / first 3 months</span>
+      </div>
+      <a href="/contact-us" class="promo-cta">Claim Offer</a>
+    </div>
+  </section>
+
   <section class="page-hero-section">
     <div class="container">
       <p class="section-eyebrow">Simple &amp; Transparent</p>
@@ -54,7 +183,11 @@
       </div>
       <div class="why-grid" style="grid-template-columns: repeat(3, 1fr); align-items:stretch;">
 
-        <div class="why-card animate-on-scroll" style="text-align:left;display:flex;flex-direction:column;">
+        <div class="why-card animate-on-scroll" style="text-align:left;display:flex;flex-direction:column;position:relative;">
+          <!-- Promo tag on Package 1 -->
+          <div style="position:absolute;top:-14px;right:16px;background:#ff6b00;color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.78rem;padding:5px 14px;border-radius:999px;letter-spacing:0.05em;">
+            $1,000/mo first 3 months
+          </div>
           <p class="section-eyebrow">Package 1 &mdash; 2-3 Callers</p>
           <h3 style="font-size:2.4rem;color:#0a2e1a;margin-bottom:8px;">$1,300<span style="font-size:1rem;color:#5a6b60;">/month per caller</span></h3>
           <ul class="mission-list" style="flex:1;">
@@ -115,7 +248,6 @@
         <h2>Acquisition / Lead Managers</h2>
       </div>
       <div class="about-grid">
-
         <div class="contact-card animate-on-scroll">
           <p class="section-eyebrow">1 Acquisition / Lead Manager</p>
           <h3 style="font-size:2.2rem;color:#0a2e1a;margin-bottom:14px;">$8<span style="font-size:1rem;color:#5a6b60;">/hour</span></h3>
@@ -127,7 +259,6 @@
           </ul>
           <a href="/contact-us" class="btn-primary" style="margin-top:20px;display:inline-block;">Get Started</a>
         </div>
-
         <div class="contact-card animate-on-scroll">
           <p class="section-eyebrow">2+ Acquisition / Lead Managers</p>
           <h3 style="font-size:2.2rem;color:#0a2e1a;margin-bottom:14px;">$7<span style="font-size:1rem;color:#5a6b60;">/hour</span></h3>
@@ -139,7 +270,6 @@
           </ul>
           <a href="/contact-us" class="btn-primary" style="margin-top:20px;display:inline-block;">Get Started</a>
         </div>
-
       </div>
     </div>
   </section>
